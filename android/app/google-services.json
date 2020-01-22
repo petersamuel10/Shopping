@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "278372108073",
+    "firebase_url": "https://fashion-flutter-e2f34.firebaseio.com",
+    "project_id": "fashion-flutter-e2f34",
+    "storage_bucket": "fashion-flutter-e2f34.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:278372108073:android:f52b98e58827136d199938",
+        "android_client_info": {
+          "package_name": "com.shopping.shopping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "278372108073-571868rr8g5aq32mdsv13vqqr8gtgu35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsNNpqxxcxZj-VF-T19wXBOxxcKajyoR8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "278372108073-571868rr8g5aq32mdsv13vqqr8gtgu35.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

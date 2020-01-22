@@ -2,6 +2,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping/components/Horizontal_listview.dart';
 import 'package:shopping/components/Products.dart';
+import 'package:shopping/pages/cart.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -34,14 +35,17 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.5,
-        title: Text('Dukkan Express'),
+        title: Text('Fashion'),
         backgroundColor: Colors.red[900],
         actions: <Widget>[
           IconButton(
-              icon: Icon(Icons.shopping_cart, color: Colors.white),
-              onPressed: () {}),
-          IconButton(
               icon: Icon(Icons.search, color: Colors.white), onPressed: () {}),
+          IconButton(
+              icon: Icon(Icons.shopping_cart, color: Colors.white),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Cart()));
+              }),
         ],
       ),
       drawer: Drawer(
@@ -94,11 +98,14 @@ class _HomeState extends State<Home> {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Cart()));
+              },
               child: ListTile(
-                title: Text('Categories'),
+                title: Text('Shopping cart'),
                 leading: Icon(
-                  Icons.dashboard,
+                  Icons.shopping_cart,
                   color: Colors.red,
                 ),
               ),
@@ -149,8 +156,10 @@ class _HomeState extends State<Home> {
           // Horizontal list view
           HorizontalList(),
           //padding widget
-          Padding(padding: const EdgeInsets.all(20.0),
-          child: Text('Recent products'),),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Text('Recent products'),
+          ),
           // grid view
           Container(
             height: 320.0,

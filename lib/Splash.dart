@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:shopping/screens/Home.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -14,7 +13,8 @@ class _SplashState extends State<Splash> {
   void initState() {
     // TODO: implement initState
     super.initState();
-     Timer(Duration(seconds: 1), () => Navigator.pushReplacementNamed(context, '/home'));
+    Timer(Duration(seconds: 1),
+        () => Navigator.pushReplacementNamed(context, '/home'));
   }
 
   @override

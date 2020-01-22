@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/Splash.dart';
-import 'package:shopping/screens/Home.dart';
+import 'package:shopping/pages/Home.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
         '/': (context) => Splash(),

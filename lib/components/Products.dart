@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/screens/product_details.dart';
+import 'package:shopping/pages/product_details.dart';
 
 class Products extends StatefulWidget {
   @override
@@ -27,14 +27,44 @@ class _ProductsState extends State<Products> {
       "price": 85,
     },
     {
-      "name": "Blazer1",
+      "name": "Blazer2",
       "picture": "assets/products/blazer2.jpeg",
       "old_price": 120,
       "price": 85,
     },
     {
-      "name": "Blazer2",
+      "name": "Dress",
       "picture": "assets/products/dress2.jpeg",
+      "old_price": 160,
+      "price": 95,
+    },
+    {
+      "name": "Shoe2",
+      "picture": "assets/products/hills2.jpeg",
+      "old_price": 120,
+      "price": 85,
+    },
+    {
+      "name": "Pants",
+      "picture": "assets/products/pants1.jpg",
+      "old_price": 120,
+      "price": 85,
+    },
+    {
+      "name": "Pant",
+      "picture": "assets/products/pants2.jpeg",
+      "old_price": 120,
+      "price": 85,
+    },
+    {
+      "name": "Skt",
+      "picture": "assets/products/skt1.jpeg",
+      "old_price": 120,
+      "price": 85,
+    },
+    {
+      "name": "Skirt",
+      "picture": "assets/products/skt2.jpeg",
       "old_price": 120,
       "price": 85,
     },
@@ -56,7 +86,6 @@ class _ProductsState extends State<Products> {
         });
   }
 }
-
 class Single_prod extends StatelessWidget {
   final prod_name;
   final prod_picture;
@@ -76,29 +105,22 @@ class Single_prod extends StatelessWidget {
           tag: prod_name,
           child: Material(
             child: InkWell(
-              onTap: () {},
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => ProductDetails(
+                        productName: prod_name,
+                        productPicture: prod_picture,
+                        productOldPrice: prod_old_price,
+                        productPrice: prod_price,
+                      ))),
               child: GridTile(
                   footer: Container(
-                    color: Colors.white70,
-                    child: ListTile(
-                      leading: Text(
-                        prod_name,
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      title: Text(
-                        "\$$prod_price",
-                        style: TextStyle(
-                            color: Colors.red, fontWeight: FontWeight.w800),
-                      ),
-                      subtitle: Text(
-                        "\$$prod_old_price",
-                        style: TextStyle(
-                            color: Colors.black54,
-                            fontWeight: FontWeight.w800,
-                            decoration
-                                :TextDecoration.lineThrough),
-                      ),
-                    ),
+                    color: Colors.white,
+                   child: Row(
+                     children: <Widget>[
+                       Expanded(child: Text(prod_name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),)),
+                       Text("\$${prod_price}", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),)
+                     ],
+                   ),
                   ),
                   child: Image.asset(
                     prod_picture,
